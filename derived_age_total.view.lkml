@@ -3,20 +3,17 @@
 
 view: derived_age_total {
   derived_table: {
-    explore_source: users {
-      column: age {}
-      column: count {}
+    sql: SELECT
+    age,
+    avg(users.age) as average_age
+    FROM demo_db.users ;;
     }
-  }
 
   dimension: age {
     type: number
   }
-  dimension: count {
+  dimension: average_age {
     type: number
   }
-  measure: us_average{
-    type: average
-    sql: ${age}  ;;
-  }
+
 }

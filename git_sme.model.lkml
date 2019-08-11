@@ -53,6 +53,9 @@ explore: order_items {
 }
 
 explore: orders {
+  cancel_grouping_fields: [
+    users.state
+  ]
   join: users {
     type: left_outer
     sql_on: ${orders.user_id} = ${users.id} ;;
@@ -72,6 +75,16 @@ explore: user_data {
   }
 }
 
-explore: users {}
+explore: users {
+  join: derived_age_total  {
+    type: left_outer
+    sql_on: ${derived_age_total.age} = ${users.age};;
+    relationship: one_to_one
+  }
+}
+
+
+
+explore:derived_age_total{}
 
 explore: users_nn {}

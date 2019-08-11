@@ -32,6 +32,7 @@ view: users {
       week,
       month,
       quarter,
+      hour_of_day,
       year
     ]
     sql: ${TABLE}.created_at ;;
@@ -71,6 +72,9 @@ view: users {
     type: count
     drill_fields: [detail*]
   }
+
+
+
 
   # ----- Sets of fields for drilling ------
   set: detail {
