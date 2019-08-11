@@ -17,7 +17,7 @@ explore: events {
     relationship: many_to_one
   }
 }
-
+#gshshshs
 explore: inventory_items {
   join: products {
     type: left_outer
