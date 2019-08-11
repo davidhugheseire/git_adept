@@ -7,7 +7,7 @@ datagroup: git_sme_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
 }
-
+#hash
 persist_with: git_sme_default_datagroup
 
 explore: events {
